@@ -162,9 +162,31 @@
   }
   .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .35s ease; }
   .work li:hover .thumb img { transform: scale(1.04); }
-  .thumb.stat { display: flex; flex-direction: column; justify-content: center; padding: 12px 14px; background: var(--accent-soft); border-color: transparent; }
-  .thumb.stat b { font-weight: 600; font-size: 22px; line-height: 1.15; color: var(--accent); letter-spacing: -.02em; }
-  .thumb.stat span { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.35; }
+  /* Illustrated tiles for projects without a screenshot */
+  .thumb.viz {
+    display: flex; flex-direction: column; justify-content: center; gap: 10px;
+    padding: 14px 16px; background: var(--accent-soft); border-color: transparent; color: var(--accent);
+  }
+  .viz small { font-family: var(--mono); font-size: 11px; color: var(--muted); text-align: center; line-height: 1.3; }
+  .viz svg { width: 100%; height: 100%; display: block; }
+  .chart-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .chart-grid span {
+    aspect-ratio: 1.35; max-height: 38px; display: grid; place-items: center; padding: 5px;
+    border-radius: 6px; background: color-mix(in srgb, var(--bg) 70%, transparent);
+  }
+  .chart-grid svg { width: auto; height: 100%; }
+  .steps { display: flex; justify-content: space-around; align-items: flex-start; gap: 6px; }
+  .steps div { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .steps span {
+    width: 54px; height: 54px; border-radius: 999px; display: grid; place-items: center; padding: 13px;
+    background: color-mix(in srgb, var(--bg) 70%, transparent);
+  }
+  .steps small { font-size: 11px; }
+  .recall { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px 8px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .recall .track { height: 12px; border-radius: 999px; background: color-mix(in srgb, var(--bg) 70%, transparent); overflow: hidden; }
+  .recall .track i { display: block; height: 100%; border-radius: 999px; background: color-mix(in srgb, var(--accent) 45%, transparent); }
+  .recall .track i.after { background: var(--accent); }
+  .recall b { font-weight: 500; color: var(--accent); }
   .work h3 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.35; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
   .work h3 .year { font-family: var(--mono); font-size: 13px; font-weight: 400; color: var(--faint); }
   .work .ctx { font-size: 14px; color: var(--faint); margin: 2px 0 8px; }
@@ -207,9 +229,6 @@
     section.block { padding-top: 44px; scroll-margin-top: 48px; }
     .work li { grid-template-columns: 1fr; gap: 14px; }
     .thumb { max-width: 420px; }
-    .thumb.stat { aspect-ratio: auto; flex-direction: row; justify-content: flex-start; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; padding: 10px 14px; }
-    .thumb.stat b { font-size: 20px; }
-    .thumb.stat span { margin-top: 0; }
   }
 </style>
 </head>
@@ -274,7 +293,7 @@
           <div>
             <h3>Course Evaluation Dashboard <span class="year">2026</span></h3>
             <p>A Streamlit app that turns four Canvas LMS exports into a full course evaluation: participation funnel, pre/post test results, question difficulty, self-assessed growth and feedback sentiment.</p>
-            <p class="result">Replaces a notebook-per-course workflow; exports a ready-to-edit Word report.</p>
+            <p class="result">Turns a manual workflow into a few clicks and exports a ready-to-edit Word report. Public version runs on synthetic data.</p>
             <div class="meta">
               <a class="chip" href="https://course-eval-dashboard.streamlit.app/">Live demo</a>
               <a class="chip" href="https://github.com/AmeliaHuang325/course-eval-dashboard">Code</a>
@@ -283,19 +302,9 @@
           </div>
         </li>
         <li>
-          <div class="thumb stat" aria-hidden="true"><b>11 charts</b><span>reusable functions, tested with pytest</span></div>
-          <div>
-            <h3>course_eval <span class="year">2024–2026</span></h3>
-            <p>The Python package behind the dashboard. It cleans Canvas quiz and survey exports and computes pre/post gains, question-level error rates, participant flow and VADER sentiment of open-ended feedback.</p>
-            <p class="result">The same analysis now runs on any course in a few lines of code.</p>
-            <div class="meta">
-              <a class="chip" href="https://github.com/AmeliaHuang325/course_eval">Code</a>
-              <span class="stack">Python · pandas · matplotlib · Plotly · NLTK · pytest</span>
-            </div>
+          <div class="thumb viz" aria-hidden="true">
+            <div class="steps"><div><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16.5 6.5l2.5 2.5M14 9l2 2"/></svg></span><small>Sign-in</small></div><div><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM9 11h6M9 15h6"/></svg></span><small>Audit log</small></div><div><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 9a4 4 0 0 1-1 9"/><path d="M12 13v8M9 16l3-3 3 3"/></svg></span><small>Backups</small></div></div>
           </div>
-        </li>
-        <li>
-          <div class="thumb stat" aria-hidden="true"><b>3 roles</b><span>Google sign-in, audit log, automated backups</span></div>
           <div>
             <h3>Project Pipeline Tracker <span class="year">2025</span></h3>
             <p class="ctx">Sole developer</p>
@@ -322,6 +331,21 @@
             </div>
           </div>
         </li>
+        <li>
+          <div class="thumb viz" aria-hidden="true">
+            <div class="chart-grid"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M7 20v-7M12 20V6M17 20v-4"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M4 15l5-5 4 3 7-7"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l5.7 5.6"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 11h10M10 16h4"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4"/><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M7 12h10"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7c9 0 9 10 18 10M3 17c9 0 9-10 18-10"/></svg></span></div>
+            <small>11 chart functions · pytest</small>
+          </div>
+          <div>
+            <h3>course_eval <span class="year">2024–2026</span></h3>
+            <p>The Python package behind the dashboard. It cleans Canvas quiz and survey exports and computes pre/post gains, question-level error rates, participant flow and VADER sentiment of open-ended feedback.</p>
+            <p class="result">The same analysis now runs on any course in a few lines of code.</p>
+            <div class="meta">
+              <a class="chip" href="https://github.com/AmeliaHuang325/course_eval">Code</a>
+              <span class="stack">Python · pandas · matplotlib · Plotly · NLTK · pytest</span>
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
 
@@ -330,15 +354,18 @@
       <h2>Machine learning &amp; AI</h2>
       <ul class="work">
         <li>
-          <div class="thumb stat" aria-hidden="true"><b>25% → 65%</b><span>context recall after a retrieval redesign</span></div>
+          <div class="thumb viz" aria-hidden="true">
+            <div class="recall"><span>Before</span><div class="track"><i style="width:25%"></i></div><b>25%</b><span>After</span><div class="track"><i class="after" style="width:65%"></i></div><b>65%</b></div>
+            <small>context recall</small>
+          </div>
           <div>
             <h3>Research RAG Assistant <span class="year">2026</span></h3>
             <p class="ctx">Technical lead</p>
-            <p>A retrieval-augmented assistant that answers planners' and policymakers' questions with cited, evidence-grounded answers from 441 research papers, each with a confidence score.</p>
+            <p>An LLM assistant built on retrieval-augmented generation (RAG). It searches 441 research papers with semantic embeddings, then Claude writes a cited, evidence-grounded answer for planners and policymakers, with a confidence score. Answer quality is tested with LLM-as-judge evaluation.</p>
             <p class="result">A paper-level retrieval change raised context recall from 25% to 65% on a 21-question expert benchmark.</p>
             <div class="meta">
               <a class="chip" href="https://github.com/AmeliaHuang325/research-rag-assistant-case-study">Case study</a>
-              <span class="stack">FastAPI · Qdrant · AWS Bedrock · React · EC2</span>
+              <span class="stack">Claude (AWS Bedrock) · Cohere embeddings · Qdrant · FastAPI · React · EC2</span>
             </div>
           </div>
         </li>
