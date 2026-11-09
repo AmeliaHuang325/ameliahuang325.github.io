@@ -188,6 +188,11 @@
   .recall .track i.after { background: var(--accent); }
   .recall b { font-weight: 500; color: var(--accent); }
   .work h3 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.35; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+  .work h3 a {
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px;
+    text-decoration-color: var(--faint);
+  }
+  .work h3 a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   .work h3 .year { font-family: var(--mono); font-size: 13px; font-weight: 400; color: var(--faint); }
   .work .ctx { font-size: 14px; color: var(--faint); margin: 2px 0 8px; }
   .work li > div:last-child { max-width: 760px; }
@@ -291,7 +296,7 @@
             <img loading="lazy" src="https://raw.githubusercontent.com/AmeliaHuang325/course-eval-dashboard/main/images/overview.png" alt="">
           </a>
           <div>
-            <h3>Course Evaluation Dashboard <span class="year">2026</span></h3>
+            <h3><a href="https://github.com/AmeliaHuang325/course-eval-dashboard">Course Evaluation Dashboard</a> <span class="year">2026</span></h3>
             <p>A Streamlit app that turns four Canvas LMS exports into a full course evaluation: participation funnel, pre/post test results, question difficulty, self-assessed growth and feedback sentiment.</p>
             <p class="result">Turns a manual workflow into a few clicks and exports a ready-to-edit Word report. Public version runs on synthetic data.</p>
             <div class="meta">
@@ -306,7 +311,7 @@
             <div class="steps"><div><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16.5 6.5l2.5 2.5M14 9l2 2"/></svg></span><small>Sign-in</small></div><div><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM9 11h6M9 15h6"/></svg></span><small>Audit log</small></div><div><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 9a4 4 0 0 1-1 9"/><path d="M12 13v8M9 16l3-3 3 3"/></svg></span><small>Backups</small></div></div>
           </div>
           <div>
-            <h3>Project Pipeline Tracker <span class="year">2025</span></h3>
+            <h3><a href="https://github.com/AmeliaHuang325/project-pipeline-case-study">Project Pipeline Tracker</a> <span class="year">2025</span></h3>
             <p class="ctx">Sole developer</p>
             <p>A secure, role-based web app for a research center to track grant-funded projects from proposal to award. Staff update records directly; every edit is logged and the database is backed up on a schedule.</p>
             <p class="result">Replaced emailed spreadsheets with one live source of truth.</p>
@@ -321,7 +326,7 @@
             <img loading="lazy" src="https://raw.githubusercontent.com/AmeliaHuang325/training-outreach-dashboard/main/images/dashboard.png" alt="">
           </a>
           <div>
-            <h3>Training Outreach Dashboard <span class="year">2023</span></h3>
+            <h3><a href="https://github.com/AmeliaHuang325/training-outreach-dashboard">Training Outreach Dashboard</a> <span class="year">2023</span></h3>
             <p>An R Shiny map of where instructor-led trainings are delivered across the U.S., by state and outreach region, built from a planning spreadsheet laid out for people rather than analysis.</p>
             <p class="result">Helps program staff spot coverage gaps at a glance. Public version runs on synthetic data.</p>
             <div class="meta">
@@ -337,7 +342,7 @@
             <small>11 chart functions · pytest</small>
           </div>
           <div>
-            <h3>course_eval <span class="year">2024–2026</span></h3>
+            <h3><a href="https://github.com/AmeliaHuang325/course_eval">course_eval</a> <span class="year">2024–2026</span></h3>
             <p>The Python package behind the dashboard. It cleans Canvas quiz and survey exports and computes pre/post gains, question-level error rates, participant flow and VADER sentiment of open-ended feedback.</p>
             <p class="result">The same analysis now runs on any course in a few lines of code.</p>
             <div class="meta">
@@ -359,7 +364,7 @@
             <small>context recall</small>
           </div>
           <div>
-            <h3>Research RAG Assistant <span class="year">2026</span></h3>
+            <h3><a href="https://github.com/AmeliaHuang325/research-rag-assistant-case-study">Research RAG Assistant</a> <span class="year">2026</span></h3>
             <p class="ctx">Technical lead</p>
             <p>An LLM assistant built on retrieval-augmented generation (RAG). It searches 441 research papers with semantic embeddings, then Claude writes a cited, evidence-grounded answer for planners and policymakers, with a confidence score. Answer quality is tested with LLM-as-judge evaluation.</p>
             <p class="result">A paper-level retrieval change raised context recall from 25% to 65% on a 21-question expert benchmark.</p>
@@ -374,7 +379,7 @@
             <img loading="lazy" src="https://raw.githubusercontent.com/AmeliaHuang325/mancala-ai-agents/main/images/elo_rankings.png" alt="">
           </a>
           <div>
-            <h3>Mancala AI: Comparing Game-Playing Agents <span class="year">2026</span></h3>
+            <h3><a href="https://github.com/AmeliaHuang325/mancala-ai-agents">Mancala AI: Comparing Game-Playing Agents</a> <span class="year">2026</span></h3>
             <p class="ctx">Penn State, AI 801 · team project</p>
             <p>A from-scratch Mancala engine with five agents (Random, Greedy, Minimax, Alpha-Beta, MCTS), compared in a 9,408-game tournament across 30 configurations.</p>
             <p class="result">Alpha-beta pruning ran 16× faster than minimax at depth 6 with no loss in playing strength.</p>
@@ -389,7 +394,7 @@
             <img loading="lazy" src="https://raw.githubusercontent.com/AmeliaHuang325/solar-dni-forecasting-lstm/main/images/actual_vs_predicted.png" alt="">
           </a>
           <div>
-            <h3>Solar Irradiance Forecasting with LSTMs <span class="year">2026</span></h3>
+            <h3><a href="https://github.com/AmeliaHuang325/solar-dni-forecasting-lstm">Solar Irradiance Forecasting with LSTMs</a> <span class="year">2026</span></h3>
             <p class="ctx">Penn State, AI 570 · team project</p>
             <p>Next-hour forecasting of direct normal irradiance for Tucson from 27 years of hourly NREL data, comparing four LSTM designs (univariate vs. multivariate, daytime-only vs. all hours).</p>
             <p class="result">The LSTMs cut forecast error roughly in half compared with a persistence baseline.</p>
@@ -404,7 +409,7 @@
             <img loading="lazy" src="https://raw.githubusercontent.com/AmeliaHuang325/Wildfire_Detection/main/output_0.jpg" alt="">
           </a>
           <div>
-            <h3>Fire Detection with YOLO <span class="year">2025</span></h3>
+            <h3><a href="https://github.com/AmeliaHuang325/Wildfire_Detection">Fire Detection with YOLO</a> <span class="year">2025</span></h3>
             <p>An end-to-end object detection pipeline: image labeling, XML-to-YOLO annotation conversion, GPU fine-tuning of YOLOv8 and YOLO11, evaluation and inference on unseen images.</p>
             <p class="result">mAP50 of 0.88 on the held-out test set with precision 1.00.</p>
             <div class="meta">
@@ -425,7 +430,7 @@
             <img loading="lazy" src="https://raw.githubusercontent.com/AmeliaHuang325/cloudynight/master/media/rendering.jpg" alt="">
           </a>
           <div>
-            <h3>Cloudy Night <span class="year">2019</span></h3>
+            <h3><a href="https://github.com/AmeliaHuang325/cloudynight">Cloudy Night</a> <span class="year">2019</span></h3>
             <p class="ctx">Columbia GSAPP, Urban Informatics II · team project</p>
             <p>A cloud-shaped lamp that lights up as people walk past while logging anonymous infrared presence data, built to test whether interactive lighting makes dim parks feel safer.</p>
             <p class="result">Deployed at Starlight Park in the Bronx with the Bronx River Alliance; sensor data analyzed for activity and movement patterns.</p>
